@@ -1,0 +1,10 @@
+services:
+  kanka-mcp:
+    image: ghcr.io/jondude1/kanka-mcp:latest
+    restart: unless-stopped
+    ports: ["3333:3333"]
+    environment:
+      KANKA_URL: https://kanka.example.com
+      KANKA_TOKEN: your-kanka-api-token
+      KANKA_CAMPAIGN_ID: "1"          # optional default campaign
+      MCP_AUTH_TOKEN: pick-a-long-random-secret   # agents send this as a Bearer token
